@@ -1,0 +1,30 @@
+{
+  "name": "worker-integrated-test",
+  "version": "1.0.0",
+  "description": "A template demonstrating worker testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "concurrently --success first --kill-others \"wrangler dev --host www.paolotagliaferri.com\" \"wait-on tcp:8787 && jest --coverage\"",
+    "lint": "eslint --fix . && echo 'Lint complete.'"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "index.js",
+      "src/*.js"
+    ]
+  },
+  "author": "Paolo Tagliaferri <me@paolotagliaferri.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-markdown": "^1.0.2",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-yaml": "^0.3.0",
+    "jest": "^26.6.3",
+    "node-fetch": "^2.6.1",
+    "prettier": "^1.18.2",
+    "wait-on": "^5.2.0"
+  }
+}
