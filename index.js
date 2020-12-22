@@ -23,7 +23,7 @@ async function handleRequest(request) {
       JSON.stringify({
         outcome: 'ERR',
         result:
-          "Please provide two integers using the m and n querystring parameters"
+          'Please provide two integers using the m and n querystring parameters'
       }),
       {
         headers: { 'content-type': 'application/json;charset=UTF-8' },

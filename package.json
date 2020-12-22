@@ -4,7 +4,7 @@
   "description": "A template demonstrating worker testing",
   "main": "index.js",
   "scripts": {
-    "test": "concurrently --success first --kill-others \"wrangler dev \" \"wait-on tcp:8787 && jest --coverage\"",
+    "test": "concurrently --success first --kill-others \"wrangler dev \" \"wait-on tcp:8787 && sleep 5 &&  jest --coverage\"",
     "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "jest": {
