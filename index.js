@@ -13,6 +13,19 @@ async function handleRequest(request) {
   const n = url.searchParams.get('n') || ''
   const op = url.searchParams.get('op') || ''
 
+  if (m === '' && n === '' && op === '') {
+    return new Response(
+      JSON.stringify({
+        outcome: 'OK',
+        result: 'healthy'
+      }),
+      {
+        headers: { 'content-type': 'application/json;charset=UTF-8' },
+        status: 200
+      }
+    )
+  }
+
   if (
     m === '' ||
     n === '' ||
