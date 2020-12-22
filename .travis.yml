@@ -6,5 +6,6 @@ node_js:
 before_install:
     - pip install --user codecov
     - npm i @cloudflare/wrangler -g
+    - wrangler build
 after_success:
     - codecov --file coverage/lcov.info --disable search
