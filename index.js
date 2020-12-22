@@ -21,7 +21,7 @@ async function handleRequest(request) {
   ) {
     return new Response(
       JSON.stringify({
-        outcome: 'err',
+        outcome: 'ERR',
         result:
           "Please provide two integers using the m and n querystring parameters"
       }),
