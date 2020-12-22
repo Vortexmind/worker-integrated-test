@@ -1,3 +1,4 @@
-# 👷 `worker-integrated-test` Sample
+# 👷 `worker-integrated-test` Automated test with Travis and Jest
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Vortexmind/worker-integrated-test.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Vortexmind/worker-integrated-test/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Vortexmind/worker-integrated-test.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Vortexmind/worker-integrated-test/context:javascript) [![Build Status](https://api.travis-ci.com/Vortexmind/worker-integrated-test.svg?branch=master)](https://travis-ci.com/github/Vortexmind/worker-integrated-test) [![Known Vulnerabilities](https://snyk.io/test/github/Vortexmind/worker-integrated-test/badge.svg)](https://snyk.io/test/github/Vortexmind/worker-integrated-test) [![codecov](https://codecov.io/gh/Vortexmind/worker-integrated-test/branch/master/graph/badge.svg)](https://codecov.io/gh/Vortexmind/worker-integrated-test)
 
-A sample worker demonstrating how to set up test and integrated tests using `jest` and `wrangler dev`
+A sample [Cloudflare Worker](https://workers.cloudflare.com/) demonstrating how to set up test and integrated tests using `jest` and `wrangler dev`
