@@ -4,7 +4,7 @@
   "description": "A sample Cloudflare worker demonstrating tests with Jest and Wrangler",
   "main": "index.js",
   "scripts": {
-    "test": "wait-on -d 10000 -t 30000 http-get://127.0.0.1:8787 && jest --coverage",
+    "test": "concurrently --success first --kill-others \"wrangler dev\" \"wait-on -d 30000 -t 5000 http-get://127.0.0.1:8787 && jest --coverage\"",
     "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "jest": {
