@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 it('Reports error on missing m param', async () => {
-  const response = fetch('http://127.0.0.1:8787/?&n=2')
+  return fetch('http://127.0.0.1:8787/?&n=2')
     .then( res => res.json())
     .then( json => {  
       expect(json.outcome).toBe("ERR")
@@ -9,7 +9,7 @@ it('Reports error on missing m param', async () => {
 });
 
 it('Reports error on missing n param', async () => {
-  const response = fetch('http://127.0.0.1:8787/?&m=2')
+  return fetch('http://127.0.0.1:8787/?&m=2')
     .then( res => res.json())
     .then( json => {  
       expect(json.outcome).toBe("ERR")
@@ -17,7 +17,7 @@ it('Reports error on missing n param', async () => {
 });
 
 it('Adds correctly by default', async () => {
-  const response = fetch('http://127.0.0.1:8787/?m=3&n=2')
+  return fetch('http://127.0.0.1:8787/?m=3&n=2')
     .then( res => res.json())
     .then( json => {  
       expect(json.outcome).toBe("OK")
@@ -26,7 +26,7 @@ it('Adds correctly by default', async () => {
 });
 
 it('Adds correctly (with op)', async () => {
-  const response = fetch('http://127.0.0.1:8787/?m=201&n=1&op=add')
+  return fetch('http://127.0.0.1:8787/?m=201&n=1&op=add')
     .then( res => res.json())
     .then( json => {  
       expect(json.outcome).toBe("OK")
@@ -35,7 +35,7 @@ it('Adds correctly (with op)', async () => {
 });
 
 it('Subtracts correctly', async () => {
-  const response = fetch('http://127.0.0.1:8787/?m=100&n=30&op=sub')
+  return fetch('http://127.0.0.1:8787/?m=100&n=30&op=sub')
     .then( res => res.json())
     .then( json => {  
       expect(json.outcome).toBe("OK")
@@ -44,7 +44,7 @@ it('Subtracts correctly', async () => {
 });
 
 it('Divides correctly', async () => {
-  const response = fetch('http://127.0.0.1:8787/?m=14&n=2&op=div')
+  return fetch('http://127.0.0.1:8787/?m=14&n=2&op=div')
     .then( res => res.json())
     .then( json => {  
       expect(json.outcome).toBe("OK")
@@ -53,7 +53,7 @@ it('Divides correctly', async () => {
 });
 
 it('Multiplies correctly', async () => {
-  const response = fetch('http://127.0.0.1:8787/?m=6&n=5&op=mul')
+  return fetch('http://127.0.0.1:8787/?m=6&n=5&op=mul')
     .then( res => res.json())
     .then( json => {  
       expect(json.outcome).toBe("OK")
