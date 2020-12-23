@@ -2,10 +2,9 @@ os: linux
 dist: focal
 language: node_js
 node_js:
-    - 14
+    - node
 before_install:
     - pip install --user codecov
     - npm i @cloudflare/wrangler -g
-    - wrangler build
 after_success:
     - codecov --file coverage/lcov.info --disable search
