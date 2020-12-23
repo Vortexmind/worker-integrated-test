@@ -1,7 +1,7 @@
 {
   "name": "worker-integrated-test",
   "version": "1.0.0",
-  "description": "A template demonstrating worker testing",
+  "description": "A sample Cloudflare worker demonstrating tests with Jest and Wrangler",
   "main": "index.js",
   "scripts": {
     "test": "concurrently --success first --kill-others \"wrangler dev\" \"wait-on -t 30000 http-get://127.0.0.1:8787 && jest --coverage\"",
