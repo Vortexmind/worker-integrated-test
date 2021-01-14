@@ -1,6 +1,6 @@
 const Maths = require('./src/maths')
 
-addEventListener('fetch', event => {
+addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request))
 })
 /**
@@ -14,16 +14,7 @@ async function handleRequest(request) {
   const op = url.searchParams.get('op') || ''
 
   if (m === '' && n === '' && op === '') {
-    return new Response(
-      JSON.stringify({
-        outcome: 'OK',
-        result: 'healthy'
-      }),
-      {
-        headers: { 'content-type': 'application/json;charset=UTF-8' },
-        status: 200
-      }
-    )
+    return respJSON('OK', 'healthy', 200)
   }
 
   if (
@@ -32,16 +23,10 @@ async function handleRequest(request) {
     !Number.isSafeInteger(parseInt(m)) ||
     !Number.isSafeInteger(parseInt(n))
   ) {
-    return new Response(
-      JSON.stringify({
-        outcome: 'ERR',
-        result:
-          'Please provide two integers using the m and n querystring parameters'
-      }),
-      {
-        headers: { 'content-type': 'application/json;charset=UTF-8' },
-        status: 400
-      }
+    return respJSON(
+      'ERR',
+      'Please provide two integers using the m and n querystring parameters',
+      400
     )
   }
 
@@ -65,14 +50,18 @@ async function handleRequest(request) {
       break
   }
 
+  return respJSON('OK', result, 200)
+}
+
+function respJSON(outcome, result, status) {
   return new Response(
     JSON.stringify({
-      outcome: 'OK',
-      result: result
+      outcome: outcome,
+      result: result,
     }),
     {
       headers: { 'content-type': 'application/json;charset=UTF-8' },
-      status: 200
+      status: status,
     }
   )
 }
