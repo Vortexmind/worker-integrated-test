@@ -22,7 +22,7 @@
     "eslint-plugin-markdown": "2.2.0",
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-yaml": "0.5.0",
-    "jest": "27.0.4",
+    "jest": "27.0.5",
     "node-fetch": "2.6.1",
     "prettier": "2.3.1",
     "wait-on": "5.3.0"
