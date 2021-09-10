@@ -4,7 +4,7 @@
   "description": "A sample Cloudflare worker demonstrating tests with Jest and Wrangler",
   "main": "index.js",
   "scripts": {
-    "test": "concurrently --success first --kill-others \"wrangler dev\" \"wait-on -d 5000 -t 30000 http-get://127.0.0.1:8787 && jest --coverage\"",
+    "test": "concurrently --success first --kill-others \"wrangler dev\" \"wait-on -d 5000 -t 30000 http-get://127.0.0.1:8787 && node --experimental-vm-modules node_modules/.bin/jest --coverage\"",
     "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "jest": {
@@ -23,7 +23,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-yaml": "0.5.0",
     "jest": "27.1.1",
-    "node-fetch": "2.6.2",
+    "node-fetch": "3.0.0",
     "prettier": "2.4.0",
     "wait-on": "6.0.0"
   }

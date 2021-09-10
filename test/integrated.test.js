@@ -1,4 +1,5 @@
-const fetch = require('node-fetch');
+// mod.cjs
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 it('Reports error on missing m param', async () => {
   return fetch('http://127.0.0.1:8787/?&n=2')
