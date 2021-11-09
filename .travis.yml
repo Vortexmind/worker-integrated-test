@@ -2,7 +2,7 @@ os: linux
 dist: focal
 language: node_js
 node_js:
-    - node
+    - lts/*
 before_install:
     - pip install --user codecov
     - npm i @cloudflare/wrangler -g
