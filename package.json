@@ -16,7 +16,7 @@
   "author": "Paolo Tagliaferri <me@paolotagliaferri.com>",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "7.2.2",
+    "concurrently": "7.3.0",
     "eslint": "8.20.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-markdown": "2.2.1",
