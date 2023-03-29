@@ -1,6 +1,4 @@
 name = "worker-integrated-test"
-type = "webpack"
-account_id = ""
 workers_dev = true
-route = ""
-zone_id = ""
+compatibility_date = "2023-03-29"
+main = "index.js"
