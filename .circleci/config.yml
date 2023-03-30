@@ -18,6 +18,8 @@ jobs:
           command: npm run test
           name: Run tests
       - codecov/upload
+      - store_test_results:
+          path: test-results
 
 workflows:
   test_my_app:
