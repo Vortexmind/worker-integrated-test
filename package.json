@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "wrangler publish --outdir dist --dry-run --minify",
-    "test": "concurrently --timings --success first --kill-others \"wrangler dev --local dist/index.js\" \"wait-on -d 3000 -t 10000 http-get://127.0.0.1:8787 && node node_modules/.bin/jest --coverage\"",
+    "test": "concurrently --timings --success first --kill-others \"wrangler dev --local dist/index.js\" \"wait-on -d 3000 -t 10000 http-get://127.0.0.1:8787 && node node_modules/.bin/jest --coverage --ci --runInBand --reporters=default --reporters=jest-junit\"",
     "lint": "eslint --fix . && echo 'Lint complete.'",
     "publish": "wrangler publish"
   },
@@ -25,6 +25,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-yaml": "0.5.0",
     "jest": "29.5.0",
+    "jest-junit": "^15.0.0",
     "node-fetch": "^2.6.9",
     "prettier": "2.8.7",
     "wait-on": "7.0.1"

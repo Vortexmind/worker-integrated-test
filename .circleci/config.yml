@@ -15,11 +15,16 @@ jobs:
           command: npm install wrangler
           name: Install Wrangler
       - run:
+          command: npm install --save-dev jest-junit
+          name: Install JUnit coverage reporter
+      - run:
           command: npm run test
           name: Run tests
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/
       - codecov/upload
       - store_test_results:
-          path: test-results
+          path: ./reports
 
 workflows:
   test_my_app:

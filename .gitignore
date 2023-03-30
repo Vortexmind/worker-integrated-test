@@ -9,3 +9,4 @@ node_modules/
 .cargo-ok
 coverage
 .dccache
+reports
