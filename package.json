@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "wrangler publish --outdir dist --dry-run --minify",
-    "test": "concurrently --success first --kill-others \"wrangler dev --local dist/index.js\" \"wait-on -d 3000 -t 10000 http-get://127.0.0.1:8787 && node --experimental-vm-modules node_modules/.bin/jest --coverage\"",
+    "test": "concurrently --timings --success first --kill-others \"wrangler dev --local dist/index.js\" \"wait-on -d 3000 -t 10000 http-get://127.0.0.1:8787 && node --experimental-vm-modules node_modules/.bin/jest --coverage\"",
     "lint": "eslint --fix . && echo 'Lint complete.'",
     "publish" : "wrangler publish"
   },
