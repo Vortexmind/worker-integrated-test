@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "worker-integrated-test" generated at 2023-03-30T12:20:56.291Z.
