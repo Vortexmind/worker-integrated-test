@@ -6,6 +6,7 @@ orbs:
 
 jobs:
   build_and_test:
+    resource_class: small
     executor: node/default
     steps:
       - checkout
