@@ -1,12 +1,15 @@
 {
-    "extends": [
-      "config:base"
-    ],
-    "packageRules": [{
-      "updateTypes": ["minor", "patch", "pin", "digest"],
-      "depTypeList": ["devDependencies"],
-      "automerge": true,
-      "schedule": ["after 10pm and before 5:00am"]
-    }]
-  }
-  
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [{
+    "updateTypes": ["pin", "digest"],
+    "depTypeList": ["devDependencies"],
+    "automerge": true
+  },
+  {
+   "matchUpdateTypes": ["minor", "patch"],
+   "automerge": true
+  }],
+  "automergeType": "pr"
+}
